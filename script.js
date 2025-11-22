@@ -1,26 +1,25 @@
-// Complete the js code
-function Car(make, model) {
-	constructor(make, model){
-	 this._make = make;
-	 this._model = model;
-    }
-
-	getMakeModel(){
-      return this._make + this._model;
-    }
-
-function SportsCar(make, model, topSpeed) extends Car(make, model){
-	constructor(make, model, topSpeed)
-	{
-        super(make, model);
-		this._topSpeed = topSpeed;
-	}
-
-	getTopSpeed(){
-    return this._topSpeed;
-	}
+function Car(make, model){
+   this.make = make;
+	this.model - model'
 }
 
-// Do not change the code below
-window.Car = Car;
-window.SportsCar = SportsCar;
+Car.prototype.getMakeModel = function(){
+    return `${this.make} ${this.modal}`;
+}
+
+function SportsCar(make, modal, topSpeed){
+Car.call(this, make, model);
+this.topSpeed = topSpeed;
+}
+
+SportsCar.prototype = Object.create(Car.prototype);
+SportsCar.prototype.constructor = SportsCar;
+
+SportsCar.prototype.getTopSpeed = function(){
+	return this._topSpeed;
+};
+
+const car = new SportsCar("Ferrari", "Testarossa", 200);
+console.log(car.getMakeModel()); 
+console.log(car.getTopSpeed()); 
+
