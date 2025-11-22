@@ -21,5 +21,5 @@ SportsCar.prototype.getTopSpeed = function(){
 
 const car = new SportsCar("Ferrari", "Testarossa", 200);
 console.log(car.getMakeModel()); 
-console.log(Car.getTopSpeed()); 
+console.log(car.getTopSpeed()); 
 
